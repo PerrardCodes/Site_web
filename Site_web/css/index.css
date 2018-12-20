@@ -2,7 +2,11 @@ body {
   display : flex;
   flex-direction: column;
   align-items: center;
-  background-color : #B9EDF8;
+  width:100%;
+  height: 100%;
+  overflow-y: scroll;
+  background:linear-gradient(#39BAE8,#EAFFD0);
+  background-size: 100% 1886px;
   margin : 0px;
 }
 section{
@@ -13,9 +17,20 @@ img{
   margin : 10px;
 }
 header{
+  background-image:url(/home/dini/Documents/public_html/projet_python/Site_web/image/drop_water.jpg);
+  background-repeat:no-repeat;
+  background-position: 70% 0%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+}
+div#header{
   display : flex;
   justify-content: center;
-  min-width: 800px;
+  width: 800px;
+  height: inherit;
 }
 section#titre {
   margin: 20px;
@@ -27,10 +42,15 @@ section#titre > h2 {
   text-decoration: none;
 }
 section#menu{
-  border: black 3px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: none;
+  text-align: center;
 /*  border-bottom: black 3px solid;
   border-top: black 3px solid;*/
-  background-color: #EAFFD0;
+  background-color: #2d2d2d;
 }
 
 ul#bouton{
@@ -77,13 +97,13 @@ h4{
 }
 button{
   text-decoration: none;
-  border-color : #39BAEA;
-  transition-duration: 0.4s;
+  color : white;
+  border : none;
   padding : 10px;
-  background-color : #39BAE8;
+  background-color : #2d2d2d;
 }
 button:hover{
-  background-color: inherit;
+  cursor: pointer;
 }
 h1 {
   font-size : 20px;
@@ -92,6 +112,9 @@ a{
   color : inherit;
   text-decoration: underline;
   text-align: center;
+}
+a:hover{
+  cursor : pointer;
 }
 li {
   margin : 10px;

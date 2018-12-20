@@ -38,28 +38,31 @@ def deb(titre):
 def header():
     message = """
         <header>
-            <img src="image/cat2.jpg">
-            <section id="titre">
-                <h1>Nom </h1>
-                <h2><i>Titre</i></h2>
-                <h2>Titre</h2>
-            </section>
+            <div id="header">
+                <img src="image/cat2.jpg">
+                <section id="titre">
+                    <h1>Nom </h1>
+                    <h2><i>Titre</i></h2>
+                    <h2>Titre</h2>
+                </section>
+            </div>
         </header>
     """
     return message
 
 def liens():
     message = """
-
         <section id="menu">
-            <ul id="bouton">
-                <li><button type="button" onclick="allerA('home')">Home</button></li>
-                <li><button type="button" onclick="allerA('research')">Research</button></li>
-                <li><button type="button" onclick="allerA('bio')">Bio</button></li>
-                <li><button type="button" onclick="allerA('people')">People</button></li>
-                <li><button type="button" onclick="allerA('publi')">Publication</button></li>
-                <li><button type="button" onclick="allerA('contact')">Contact</button></li>
-            </ul>
+            <section id="flexmenu">
+                <ul id="bouton">
+                    <li><button type="button" onclick="allerA('home')">Home</button></li>
+                    <li><button type="button" onclick="allerA('research')">Research</button></li>
+                    <li><button type="button" onclick="allerA('bio')">Bio</button></li>
+                    <li><button type="button" onclick="allerA('people')">People</button></li>
+                    <li><button type="button" onclick="allerA('publi')">Publication</button></li>
+                    <li><button type="button" onclick="allerA('contact')">Contact</button></li>
+                </ul>
+            </section>
         </section>
     """
     return message
@@ -87,7 +90,7 @@ def research():
                     </a>
                 </span>
                 <span class="show bubble_breaking">
-                    <a onclick="cacher('bubble_breaking')"">
+                    <a onclick="cacher('bubble_breaking')">
                         <h4>Bubble breaking in turbulent environnement</h4>
                         <img src="image/cat3.jpg" />
                     </a>

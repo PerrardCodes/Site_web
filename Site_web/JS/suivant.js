@@ -4,6 +4,14 @@ function allerA(id){
 	if(document.getElementsByClassName("show").length<4){
 		liste()
 	}
+	test = document.getElementsByClassName("sshow")[0]
+	taille=test.offsetHeight + 400;
+	taille_fenetre = window.innerHeight;
+	if(taille > taille_fenetre){
+		document.body.style.backgroundSize = "100% " + taille + "px"
+	} else {
+		document.body.style.backgroundSize = "100% " + taille_fenetre + "px"
+	}
 }
 function cacher(id){
 	d = document.getElementsByClassName("article");
@@ -33,4 +41,13 @@ function liste(){
 		for(var i=0; i<s.length; i++){
 			s[i].className = s[i].className.replace("hide", "show")
 		}
+}
+
+test = document.getElementsByClassName("sshow")[0]
+taille=test.offsetHeight + 400;
+taille_fenetre = window.innerHeight;
+if(taille > taille_fenetre){
+	document.body.style.backgroundSize = "100% " + taille + "px"
+} else {
+	document.body.style.backgroundSize = "100% " + taille_fenetre + "px"
 }
