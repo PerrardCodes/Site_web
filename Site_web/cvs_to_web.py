@@ -39,31 +39,31 @@ def article(file):
         m+="""
         <div class="publication">
             <h5>"""
-        m+=t[i]["title"].encode('utf-8')
+        m+=t[i]["title"]#.encode('utf-8')
         m+="""
             </h5>
             <p>
         """
-        m+=t[i]["ENTRYTYPE"].encode('utf-8').lower().capitalize()
+        m+=t[i]["ENTRYTYPE"].lower().capitalize()
         m+=" by "
-        m+= t[i]["author"].encode('utf-8')
+        m+= t[i]["author"]#.encode('utf-8')
         m+= " published in \""
-        m+= t[i]["journal"].encode('utf-8')
+        m+= t[i]["journal"]#.encode('utf-8')
         m+="\", volume "
-        m+= t[i]["volume"].encode('utf-8')
+        m+= t[i]["volume"]#.encode('utf-8')
         if "pages" in t[i] :
             m+=", page "
-            m+= t[i]["pages"].encode('utf-8')
+            m+= t[i]["pages"]#.encode('utf-8')
         m+=", in "
-        m+=t[i]["year"].encode('utf-8')
+        m+=t[i]["year"]#.encode('utf-8')
         m+="""
         </p>
         <a href="database/MesArticles/"""
-        m+=t[i]["ID"].encode("utf-8").replace(" ", "")
+        m+=t[i]["ID"].replace(" ", "")
         m+=""".pdf"><img src="image/PDF.png" class="pdf"></a>
         <p class="date">Published the :
         """
-        m+=t[i]["date-added"].encode('utf-8')[:10]
+        m+=t[i]["date-added"][:10]
         m+= "</p></div>"
     m+="</div>"
     return m
