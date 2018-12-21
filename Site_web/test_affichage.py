@@ -9,10 +9,11 @@ def index():
     m += home()
     m += research()
     m += bio()
-    file_intership = '/home/dini/Documents/public_html/projet_python/Site_web/database/internships.csv'
-    file_collaborators = '/home/dini/Documents/public_html/projet_python/Site_web/database/collaborators.csv'
+    folder = '/Users/stephane/Documents/git/Site_web/Site_web/'
+    file_intership = folder+'database/internships.csv'
+    file_collaborators = folder+'database/collaborators.csv'
     m += people(file_intership, file_collaborators)
-    file_article = '/home/dini/Documents/public_html/projet_python/Site_web/database/mesarticles.bib'
+    file_article = folder+'database/mesarticles.bib'
     m += publi(file_article)
     m += contact()
     m += fin()
@@ -39,7 +40,7 @@ def header():
     message = """
         <header>
             <div id="header">
-                <img src="image/cat2.jpg">
+                <img src="image/portrait_SPerrard.png">
                 <section id="titre">
                     <h1>Nom </h1>
                     <h2><i>Titre</i></h2>
@@ -55,7 +56,6 @@ def liens():
         <section id="menu">
             <section id="flexmenu">
                 <ul id="bouton">
-                    <li><button type="button" onclick="allerA('home')">Home</button></li>
                     <li><button type="button" onclick="allerA('research')">Research</button></li>
                     <li><button type="button" onclick="allerA('bio')">Bio</button></li>
                     <li><button type="button" onclick="allerA('people')">People</button></li>
@@ -69,7 +69,7 @@ def liens():
 
 def home():
     message = """
-        <section id="home" class="sshow">
+        <section id="home" class="hide">
             <h3>Home</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ex justo, volutpat at scelerisque in, vulputate non neque. Proin pharetra accumsan mauris, vitae ornare purus viverra elementum. Aenean ante nunc, finibus vel purus non, egestas laoreet mi. In feugiat porttitor luctus. Aliquam ac maximus lectus. Donec mi nibh, iaculis nec risus non, rhoncus ultrices nibh. In pulvinar scelerisque nibh quis consectetur. Cras fermentum, magna at dignissim malesuada, augue leoullamcorper turpis, eu aliquet metus est ac enim. In ipsum massa, eleifend quis porta non, rhoncus id tellus. Mauris sit amet magna viverra, fringilla purus quis, vehicula ligula. Pellentesque efficitur, nisl in commodo placerat, nisi elit viverra metus, ut volutpat turpis leo dictum tortor. Donec finibus elit nisl, id interdum lorem dictum at. </p>
             <p> Quisque convallis nisl lectus. Donec varius lacus a libero mattis, a tincidunt ligula sagittis. Fusce dui risus, laoreet nec erat vitae, blandit luctus erat. Vestibulum cursus accumsan odio, nec suscipit quam facilisis nec. Donec egestas mollis mi, sed condimentum ex rutrum a. Pellentesque neque diam, semper ac nulla ac, lobortis aliquet lorem. Suspendisse potenti. Morbi sollicitudin lacinia ultrices. Cras magna lectus, consequat vitae ex eget, hendrerit fermentum erat. Duis feugiat, quam vel aliquam elementum, dolor lectus iaculis magna, et faucibus arcu turpis a ligula. Etiam non convallis neque, efficitur maximus odio. Ut leo metus, interdum ac varius vitae, imperdiet ut purus. </p>
@@ -79,40 +79,41 @@ def home():
 
 def research():
     message = """
-        <section id="research" class="hide">
-            <h3>Research</h3>
+        <section id="research" class="sshow">
+            <p> I am an experimental Physicist with a strong interest for non linear dynamics and multi-scale systems. I often combine experiments, theory and toy model numerical simulations. My research area includes surface waves, hydrodynamic turbulence, dynamical systems and statistical physics. </p>
             <button id="retour" class="hide" onclick="liste()">Retour</button>
             <div id="flexr">
-                <span class="show wind_wave">
-                    <a onclick="cacher('wind_wave')">
-                        <h4>Wind wave generation</h4>
-                        <img src="image/cat.jpg" />
-                    </a>
-                </span>
                 <span class="show bubble_breaking">
                     <a onclick="cacher('bubble_breaking')">
-                        <h4>Bubble breaking in turbulent environnement</h4>
-                        <img src="image/cat3.jpg" />
-                    </a>
-                </span>
-                <span class="show hydro_turbulence">
-                    <a onclick="cacher('hydro_turbulence')">
-                        <h4>Large scale behaviour of hydrodynamic turbulence</h4>
-                        <img src="image/cat.jpg" />
+                        <h4>Turbulence & Interfaces</h4>
+                        <img src="image/ballooncloseup.png" />
                     </a>
                 </span>
                 <span class="show pilot_wave">
                     <a onclick="cacher('pilot_wave')">
-                        <h4>Pilot-wave Dynamics & memory driven systems</h4>
-                        <img src="image/cat3.jpg" />
+                        <h4>Memory-driven systems</h4>
+                        <img src="image/walker.png" />
                     </a>
                 </span>
                 <span class="show surface_wave">
                     <a onclick="cacher('surface_wave')">
-                        <h4>Surface waves on levitated liquids</h4>
-                        <img src="image/cat.jpg" />
+                        <h4>Waves & Capillarity </h4>
+                        <img src="image/Torus.png" />
                     </a>
                 </span>
+                <span class="show hydro_turbulence">
+                    <a onclick="cacher('hydro_turbulence')">
+                        <h4>Large scale dynamics</h4>
+                        <img src="image/Large_scale.png" />
+                    </a>
+                </span>
+
+                <span class="show wind_wave">
+                    <a onclick="cacher('wind_wave')">
+                        <h4>Wind waves</h4>  </br> </br>
+                        <img src="image/WrinklesFourier.png" />
+                    </a>
+                </span> 
             </div>"""
     message += article1()
     message += article2()
