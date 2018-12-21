@@ -1,6 +1,12 @@
 # coding: utf-8
-import bibtexparser
+import bibtexparser as bib
 import csv
+import os
+import bibstyle
+
+from yattag import indent
+
+
 def internship(file):
     f = open(file, "r")
     t = f.read()
@@ -31,11 +37,36 @@ def contributor(file):
     return m
 
 def article(file):
+    from operator import itemgetter
+    
     m='<div id="flexpubli">'
+    
+    # for a list of bib elements
+   # with open(file) as bibtex_file:
+    #    bib_database = bib.load(bibtex_file)
+        
+    #    entries = list(bib_database.entries)
+    #    entries.sort(key=lambda x: x['year'],reverse=True)
+
+    #    stringlist = []
+    #    for entry in entries:
+    #        stringlist.append(bibstyle.display(entry,typ='html'))
+
+     #   doc, tag, text = genhtml.makelist(stringlist,'Publications',order='o',opt=' reversed')
+
+#        filename='siteweb/publications.html'
+#        f=open(filename,'w')
+#        f.write(indent(doc.getvalue()).encode('utf-8'))
+#        f.close()
+        
     with open(file) as bibtex_file:
-        bib_database = bibtexparser.load(bibtex_file)
+        bib_database = bib.load(bibtex_file)
+        
     t= bib_database.entries
+    t = sorted(t, key=itemgetter('year'), reverse=True)
+
     for i in range(0, len(t)):
+        namefile = t[i]["ID"].replace(" ", "")
         m+="""
         <div class="publication">
             <h5>"""
@@ -44,26 +75,28 @@ def article(file):
             </h5>
             <p>
         """
-        m+=t[i]["ENTRYTYPE"].lower().capitalize()
-        m+=" by "
-        m+= t[i]["author"]#.encode('utf-8')
-        m+= " published in \""
-        m+= t[i]["journal"]#.encode('utf-8')
-        m+="\", volume "
-        m+= t[i]["volume"]#.encode('utf-8')
-        if "pages" in t[i] :
-            m+=", page "
-            m+= t[i]["pages"]#.encode('utf-8')
-        m+=", in "
-        m+=t[i]["year"]#.encode('utf-8')
+
+        folder = '/MesArticles/image/'
+        if not os.path.isfile(os.path.dirname(file)+folder+namefile+'.png'):
+            print('Missing image for : '+folder+namefile)
+            name = 'PDF'
+            #print(name)
+        else:
+            name = namefile
+            print('found !')
+            print(name)
+            
         m+="""
         </p>
-        <a href="database/MesArticles/"""
-        m+=t[i]["ID"].replace(" ", "")
-        m+=""".pdf"><img src="image/PDF.png" class="pdf"></a>
-        <p class="date">Published the :
+        <img src="database/MesArticles/image/"""+name+""".png" class="pdf">
+        <p class="date">
         """
-        m+=t[i]["date-added"][:10]
+        m+=bibstyle.display(t[i],typ='html')
+#        m+='Published the :'
+#        m+=t[i]["date-added"][:10]
+        m+="""<a href="database/MesArticles/"""+namefile+""".pdf">"""
+        m+='['+str(len(t)-i)+']'
+        m+="</a>"
         m+= "</p></div>"
     m+="</div>"
     return m

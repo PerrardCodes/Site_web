@@ -14,14 +14,14 @@ body {
 section{
   max-width: 830px;
 }
-img{
+div#header > img{
   width : 17%;
   Height : 70%;
   margin : 10px;
   margin-left : 10%;
 }
 header{
-  background-image:url(/Users/stephane/Documents/git/Site_web/Site_web/image/drop_water.jpg);
+  background-image:url(../image/drop_water.jpg);
   background-repeat:no-repeat;
   background-position: 70% 0%;
   width: 100%;
@@ -36,7 +36,7 @@ div#header{
   height: inherit;
 }
 section#titre {
-  margin: 20px;
+  margin: 50px;
 }
 section#titre > h1 {
   font-size : 30px;
@@ -49,7 +49,7 @@ section#menu{
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 25px;
+  height: 35px;
   max-width: none;
   text-align: center;
 /*  border-bottom: black 3px solid;
@@ -62,16 +62,19 @@ ul#bouton{
   display : flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-right : 15px
+  margin-right : 15px;
+  font-family = “Times New Roman”;
+  font-size : 30px;
 }
 ul#bouton > li{
   /*top left bottom right*/
   padding : 0px 10px 0px 10px;
-  /* background-color : #EAFFD0;
+  /* background-color : #EAFFD0; 
   border-left : solid 2px;
   border-right: solid 2px;*/
-  margin : 0px 15px 0px 15px;
+  margin : -32px 15px -30px 15px;
 }
+
 section#home, section#research, section#bio, section#people, section#publi, section#contact{
   max-width: 800px;
   text-align : justify;
@@ -89,7 +92,7 @@ div#flexr{
   text-align:center;
 }
 div#flexr > span{
-  width : 30%;
+  width : 35%;
   /*top left bottom right*/
   margin: 10px 5px 50px 5px;
   
@@ -104,8 +107,11 @@ Align-items:center;
 span > a > img{
   width : 85%;
   padding : 10px 2px 0px 2px;
+  /*
   border-top : black solid 0.15em;
+  */
 }
+
 h4{
   margin : 10px 0px 0px 0px;
   justify-content: center;
@@ -136,10 +142,25 @@ a:hover{
 li {
   margin : 10px;
 }
+
+div.flex_article{
+  display : flex;
+  flex-direction : row;
+}
+
+div.flex_article>img{
+  width:auto;
+  margin-left:20px;
+}
+
+div.flex_article>p{
+  width:100%;
+}
+
 div.publication{
   display : flex;
   flex-direction : column;
-  max-width: 350px;;
+  max-width: 350px;
   margin : 10px;
   padding-bottom : 10px;
   border-radius : 10px;
@@ -162,6 +183,7 @@ p{
   Font-size:18px;
 }
 img.pdf{
-  width : 30px;
-  align-self: flex-start;
+  height : 120px;
+  align-self: center;
+  text-align:center;
 }

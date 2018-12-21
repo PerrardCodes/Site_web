@@ -80,7 +80,6 @@ def home():
 def research():
     message = """
         <section id="research" class="sshow">
-            <p> I am an experimental Physicist with a strong interest for non linear dynamics and multi-scale systems. I often combine experiments, theory and toy model numerical simulations. My research area includes surface waves, hydrodynamic turbulence, dynamical systems and statistical physics. </p>
             <button id="retour" class="hide" onclick="liste()">Retour</button>
             <div id="flexr">
                 <span class="show bubble_breaking">
@@ -89,6 +88,14 @@ def research():
                         <img src="image/ballooncloseup.png" />
                     </a>
                 </span>
+                
+                <span class="show wind_wave">
+                    <a onclick="cacher('wind_wave')">
+                        <h4>Wind waves</h4>  </br> </br>
+                        <img src="image/WrinklesFourier.png" />
+                    </a>
+                </span> 
+                
                 <span class="show pilot_wave">
                     <a onclick="cacher('pilot_wave')">
                         <h4>Memory-driven systems</h4>
@@ -108,12 +115,6 @@ def research():
                     </a>
                 </span>
 
-                <span class="show wind_wave">
-                    <a onclick="cacher('wind_wave')">
-                        <h4>Wind waves</h4>  </br> </br>
-                        <img src="image/WrinklesFourier.png" />
-                    </a>
-                </span> 
             </div>"""
     message += article1()
     message += article2()
@@ -127,44 +128,105 @@ def research():
 
 def article1():
     message = """
-            <div class="article hide wind_wave">
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porta, ligula vel dignissim maximus, felis neque maximus leo, non interdum ipsum neque et tellus. Aliquam non libero mollis, dapibus tellus ac, tempus risus. Pellentesque ac interdum neque. Mauris tristique lacus lacus, interdum suscipit nisi rhoncus vel. Aenean volutpat nisl eget malesuada tincidunt. Fusce eget erat odio. Aliquam at egestas augue. Nulla libero ex, vehicula nec suscipit in, dignissim in urna. Fusce feugiat imperdiet arcu, a suscipit magna sollicitudin vitae. Fusce sit amet metus augue. Etiam nec volutpat enim. Praesent sed nulla commodo, tincidunt ante non, sagittis felis. Quisque sit amet velit placerat leo tempor tempor aliquet et justo. </p>
+    
+            <div class="article hide bubble_breaking">
+            <div class=flex_article>
+               <p>
+               The breaking of an air bubble in a turbulent flow generally occurs above a critical bubble size called the Hinze scale, 
+               at which surface tension and inertial forces balance. What happens if a much large bubble than the Hinze scale is created? 
+               We investigate this highly non linear configuration by cracking air balloons in a jet generated turbulent background flow. 
+               This work is done in collaboration with Pr L. Deike (Princeton University, Mechanical & Aerospace Engineering).
+               </p>
+               <img src="image/ballonbreaking.png" />
+            </div>
             </div>
     """
     return message
+    
 def article2():
     message = """
-            <div class="article hide bubble_breaking">
-                <p>Nullam non ullamcorper ex. Fusce non ornare justo, ac condimentum sapien. Phasellus mauris ligula, pharetra in est nec, pretium interdum leo. Nullam non orci porttitor, finibus nisi quis, tempor tellus. Proin pulvinar diam vitae tempus sodales. Proin vitae enim tortor. Suspendisse in sem justo. Nullam et semper odio. Nam finibus placerat lorem, eu sollicitudin diam feugiat et. Vivamus sem eros, dignissim ac odio et, euismod eleifend tellus. </p>
+            <div class="article hide pilot_wave">
+                        <div class=flex_article>
+
+                <p>
+                Over the past 15 years, oil drops bouncing on a vibrated liquid bath have drawn growing attention as a rare example 
+                of macroscopic wave-particle duality. Following my PhD work, we investigate numerically the general behavior of memory driven systems
+                in disordered phases. We study in particular the emerging statistical behaviour reminiscent of the wave guiding field. 
+                Most recent works have been done in collaboration with M. Labousse (ESPCI, Laboratoire Gulliver) and M. Hubert (Université de Liège, GRASP). 
+                </p>
+                <img src="image/walkers.png" />
+
+            </div>
             </div>
     """
     return message
 def article3():
+    
     message = """
-            <div class="article hide hydro_turbulence">
-                <p>Vestibulum vel auctor sem. Nullam tincidunt cursus tincidunt. Aenean imperdiet eros est, at tincidunt velit lacinia imperdiet. In lacinia purus non enim condimentum eleifend. Ut et efficitur erat, a pellentesque risus. Curabitur imperdiet dapibus enim, a tincidunt turpis convallis ac. Nulla a ornare lacus. Donec eleifend massa id mattis rhoncus. Cras consequat eget est quis consequat. Suspendisse a venenatis est. </p>
+            <div class="article hide wind_wave">
+                        <div class=flex_article>
+
+                <p>
+                When the wind blows over the ocean, it generates surface waves. The current theories can be traced back to the 50s’ [1,2], 
+                but the underlying mechanism are not yet fully understood. Following a recent experimental advance of Paquier et al. [3], 
+                we recently showed that the structures generated by the wind below the wind threshold are reminiscent of air pressure fluctuations.
+                The link between the reminiscent structures called wrinkles and the wind threshold is still to investigate. 
+                This work is done in collaboration with F. Moisy & M. Rabaud (Université Paris-Sud, FAST) and M. Benzaquen (Ecole Polytechnique, LadHyX)
+                </p>
+                
+                <img src="image/numerical_setup.png" />
+
             </div>
-    """
+            </div>
+            """
     return message
+    
 def article4():
     message = """
-            <div class="article hide pilot_wave">
-                <p>Nulla vestibulum nunc sed mauris maximus, non imperdiet neque volutpat. Integer gravida convallis porta. Duis posuere turpis faucibus metus fringilla consectetur. Quisque maximus lorem vel mauris tempor egestas. Quisque in erat eget elit varius dictum. Quisque in leo lacus. Morbi ultrices, mauris vel consequat eleifend, felis lectus vulputate quam, sagittis posuere risus turpis eget risus. Vestibulum feugiat nibh nec consequat blandit. Nulla orci nisl, maximus sit amet erat ut, accumsan euismod nulla. </p>
-            </div>
-    """
+            <div class="article hide hydro_turbulence">
+                        <div class=flex_article>
+
+                <p> 
+                In hydrodynamic Turbulence, tremendous research efforts have been devoted to the study of Navier-Stokes equation with
+                a finite energy transfer rate from an integral length scale toward small scales as pictured in Fourier space (see image). 
+                Less is known on the dynamics of the large scale structures, i.e. that larger than the integral length scale. 
+                We aim at designing lab experiments to observe and study the dynamics of these large scales. 
+                This work is done in collaboration with S. Fauve & F. Pétrélis (ENS Paris, LPS) and M. Berhanu & E. Falcon (University Paris-Diderot, Paris)
+                </p>
+                
+                <img src="image/Large_scale_turbulence.png" />
+
+
+                </div>
+                </div>
+            """
     return message
+    
 def article5():
     message = """
             <div class="article hide surface_wave">
-                <p>Donec sit amet lacinia justo. Aliquam dignissim nibh arcu, nec pulvinar risus lacinia vel. Aliquam quis faucibus felis, sed ullamcorper augue. Donec hendrerit lorem ut dignissim faucibus. Ut in nunc eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut a elementum sapien, ut semper massa. Nullam imperdiet sodales congue. Maecenas rutrum sem eu nulla tristique gravida. Integer sed posuere ante, non tincidunt sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque aliquam est ante, ac accumsan massa lacinia eu. </p>
-            </div>
+                        <div class=flex_article>
+
+                <p>When a liquid drop is poured onto a very hot surface, it can levitate on its own vapor film. 
+                The so-called Leidenfrost effect is a graal for the experimental physicist as a tool to isolate liquids from any solid contact. 
+                Using curved heated substrate, we achieve levitation of liquid cylinder of macroscopic sizes, typically 50cm long and 1cm wide. 
+                This experimental discovery led to the study of surface waves on exotic geometries (toroidal channel, linear channel, symetric and asymetric channels). 
+                Current works are done in collaboration with C.T. Pham (Université Paris-Sud, LIMSI).
+                </p>       
+                
+                <img src="image/Levitated_liquids.png" />
+         
+                </div>
+                </div>
     """
     return message
 
 def bio():
     message = """
         <section id="bio" class="hide">
-            <h3>Bio</h3>
+            <p> I am an experimental Physicist with a strong interest for non linear dynamics and multi-scale systems. 
+            I often combine experiments, theory and toy model numerical simulations.
+            My research area includes surface waves, hydrodynamic turbulence, dynamical systems and statistical physics. </p>
         </section>
     """
     return message
@@ -172,12 +234,12 @@ def bio():
 def people(file_intership, file_collaborators):
     message = """
         <section id="people" class="hide">
-            <h3>People</h3>
             <h4>Present & past collaborators </h4>
             <p>"""
     t=cw.contributor(file_collaborators)
     message +=str(t)
     message +="""</p>
+    
             <h4>Past supervised students</h4>
             <p>"""
     t=cw.internship(file_intership)
@@ -201,7 +263,6 @@ def publi(file_article):
 def contact():
     message = """
         <section id="contact" class="hide">
-            <h3>Contact</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ex justo, volutpat at scelerisque in, vulputate non neque. Proin pharetra accumsan mauris, vitae ornare purus viverra elementum. Aenean ante nunc, finibus vel purus non, egestas laoreet mi. In feugiat porttitor luctus. Aliquam ac maximus lectus. Donec mi nibh, iaculis nec risus non, rhoncus ultrices nibh. In pulvinar scelerisque nibh quis consectetur. Cras fermentum, magna at dignissim malesuada, augue leoullamcorper turpis, eu aliquet metus est ac enim. In ipsum massa, eleifend quis porta non, rhoncus id tellus. Mauris sit amet magna viverra, fringilla purus quis, vehicula ligula. Pellentesque efficitur, nisl in commodo placerat, nisi elit viverra metus, ut volutpat turpis leo dictum tortor. Donec finibus elit nisl, id interdum lorem dictum at. </p>
         </section>
     """
